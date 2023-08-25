@@ -1,8 +1,10 @@
+package rabbitmqConsumer;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.springDoc.mq;
+
 
 import io.micrometer.common.util.StringUtils;
 import java.net.URI;
@@ -28,8 +30,8 @@ import org.springframework.context.annotation.Configuration;
 public class MQConfig {
     
     public static final String QUEUE = "OUT.EKB.USER.STATUS";
-    public static final String EXCHANGE = "springDoc_exchange";
-    public static final String ROUTING_KEY = "springDoc_routingKey";
+    public static final String EXCHANGE = "message_exchange";
+    public static final String ROUTING_KEY = "message_routingKey";
     
     @Bean
     public Queue queue(){
@@ -58,6 +60,7 @@ public class MQConfig {
 	{
 		//получаем адрес AMQP у провайдера
 		String uri = "amqp://rabbitmq:wdDSAVJqdcjweacmACA@xbank-rabbitmq-dev.chatbotsstudio.com:5672";
+                //String uri = "amqp://rabbitmq:wdDSAVJqdcjweacmACA@localhost:5672";
 		URI url = null;
 		try
 		{
